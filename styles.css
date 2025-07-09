@@ -1,0 +1,645 @@
+/* CSS Variables */
+:root {
+    --primary-color: #2a4a46;
+    --secondary-color: #a38826;
+    --accent-color: #f8d7da;
+    --text-color: #333;
+    --light-text: #fff;
+    --focus-color: #4d9f0c;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+}
+
+body {
+    background-color: #2a4a46;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('our-wedding.jpg');
+    background-size: cover;       /* Ensures full coverage */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-attachment: scroll; /* Optional: creates parallax effect */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-text);
+    padding: 0 20px;
+}
+
+/* Navigation */
+.nav-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    color: var(--secondary-color);
+    outline: 2px solid var(--focus-color);
+}
+
+/* Hero Content */
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.date {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: var(--light-text);
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+    background: var(--primary-color);
+    color: var(--text-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    outline: none;
+}
+
+/* Layout Components */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+/* Our Story Section */
+.our-story {
+    background-color: var(--primary-color);
+    padding: 80px 0;
+}
+
+.story-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.story-text {
+    flex: 1;
+}
+
+.story-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    height: 400px;
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: var(--secondary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.timeline-container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid var(--secondary-color);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid var(--secondary-color);
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--secondary-color);
+}
+
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid var(--secondary-color);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--secondary-color) transparent transparent;
+}
+
+.right::after {
+    left: -16px;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Event Schedule */
+.event-schedule {
+    background-color: var(--primary-color);
+    padding: 80px 0;
+}
+
+.event-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.event-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.event-card .event-time {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.event-card .dress-code {
+    font-style: italic;
+    color: var(--secondary-color);
+}
+
+/* Location Map */
+.map-container {
+    height: 500px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.venue-details {
+    margin-top: 30px;
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    height: 300px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* RSVP Form */
+.rsvp-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #2a4a46;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    border-color: var(--secondary-color);
+    outline: 2px solid var(--focus-color);
+}
+
+.form-error {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: none;
+}
+
+.form-group.error .form-error {
+    display: block;
+}
+
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+    border-color: #dc3545;
+}
+
+/* Multi-select styling */
+.multiselect-container {
+    position: relative;
+}
+
+.multiselect-selected {
+    border: 1px solid #2a4a46;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.multiselect-options {
+    display: none;
+    position: absolute;
+    width: 100%;
+    border: 1px solid #2a4a46;
+    border-radius: 5px;
+    background: white;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.multiselect-options.show {
+    display: block;
+}
+
+.multiselect-option {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.multiselect-option:hover {
+    background-color: var(--primary-color);
+}
+
+.multiselect-option.selected {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Contact Info */
+.contact-info {
+    background-color: var(--primary-color);
+    padding: 80px 0;
+}
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.contact-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.contact-card i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.contact-card h3 {
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+/* Footer */
+footer {
+    background: var(--secondary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: 30px 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.social-links a {
+    color: var(--light-text);
+    margin: 0 15px;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover,
+.social-links a:focus {
+    color: var(--accent-color);
+    outline: 2px solid var(--focus-color);
+}
+
+/* Countdown Timer */
+#countdown {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    font-weight: bold;
+    color: var(--light-text);
+}
+
+/* Loading spinner */
+.spinner {
+    display: none;
+    width: 40px;
+    height: 40px;
+    margin: 20px auto;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--secondary-color);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Success message */
+.success-message {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block !important;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    
+    .date {
+        font-size: 1.3rem;
+    }
+    
+    .story-content {
+        flex-direction: column;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .timeline::after {
+        left: 31px;
+    }
+    
+    .timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .timeline-container::before {
+        left: 60px;
+        border: medium solid var(--secondary-color);
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--secondary-color) transparent transparent;
+    }
+    
+    .left::after, .right::after {
+        left: 15px;
+    }
+    
+    .right {
+        left: 0%;
+    }
+    
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Timeline Photo Styles */
+.timeline-photo {
+    margin: 0 -30px 20px -30px;
+    width: calc(100% + 60px);
+    height: 200px;
+    overflow: hidden;
+    border-radius: 6px 6px 0 0;
+}
+
+.timeline-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.timeline-content:hover .timeline-photo img {
+    transform: scale(1.05);
+}
+
+/* Adjust timeline containers for photos */
+.timeline-content {
+    padding: 0 0 20px 0;
+    overflow: hidden;
+}
+
+.timeline-content h3 {
+    padding: 20px 30px 0;
+}
+
+.timeline-content p {
+    padding: 0 30px;
+}
+
+/* Adjust timeline dots for new layout */
+.timeline-container::after {
+    top: 100px;
+}
+
+.left::before, .right::before {
+    top: 110px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .timeline-photo {
+        height: 150px;
+    }
+    
+    .timeline-container::after {
+        top: 75px;
+    }
+    
+    .left::before, .right::before {
+        top: 85px;
+    }
+}
